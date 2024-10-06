@@ -2,9 +2,9 @@
   "name": "phantom-depcheck",
   "version": "1.0.0",
   "description": "Tool to find phantom dependencies in a Node.js project",
-  "main": "index.cjs",
+  "main": "lib/index.cjs",
   "bin": {
-    "phantom-depcheck": "index.cjs"
+    "phantom-depcheck": "lib/index.cjs"
   },
   "scripts": {
     "start": "node index.cjs"
