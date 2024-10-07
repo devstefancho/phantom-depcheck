@@ -7,7 +7,7 @@
     "phantom-depcheck": "lib/index.cjs"
   },
   "scripts": {
-    "start": "node index.cjs"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "devstefancho",
@@ -19,7 +19,7 @@
     "glob": "^11.0.0"
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=20.0.0"
   },
   "devDependencies": {
     "@types/babel__traverse": "^7.20.6"
