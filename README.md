@@ -10,6 +10,6 @@ Outputs results to the console and logs them to a file.
 ```bash
 npm install -g phantom-depcheck # npm
 yarn global add phantom-depcheck # yarn
-phantom-depcheck # phantom-depcheck in your project directory. By default, it scans the src folder.
-phantom-depcheck <directory> # To specify a different folder:
+npx phantom-depcheck # phantom-depcheck in your project directory. By default, it scans the src folder.
+npx phantom-depcheck <directory> # To specify a different folder (ex. npx phantom-depcheck client)
 ```
