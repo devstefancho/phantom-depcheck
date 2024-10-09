@@ -22,14 +22,14 @@ npx phantom-depcheck init 명령어를 실행하면 다음과 같은 구조의 p
 
 ```json
 {
-  "customFilteredPackages": ["react", "react-dom", "public"],
+  "excludes": ["react", "react-dom", "public"],
   "srcPaths": ["src", "client"]
 }
 ```
 
-- customFilteredPackages: 제외할 패키지 목록입니다. 여기에 추가된 패키지는 최종 결과에 출력되지 않습니다.
+- excludes: 제외할 패키지 목록입니다. 여기에 추가된 패키지는 최종 결과에 출력되지 않습니다.
 - srcPaths: 사용하는 패키지들을 검색할 경로 리스트입니다.
 
 ## Notes:
 tsconfig.json에 정의된 별칭 경로(alias paths)를 자동으로 제외하므로
-별칭 경로는 customFilteredPackages에 추가할 필요가 없습니다.
+별칭 경로는 excludes에 추가할 필요가 없습니다.

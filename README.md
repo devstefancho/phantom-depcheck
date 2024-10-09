@@ -21,14 +21,14 @@ Running `npx phantom-depcheck init` will generate a `phantom-depcheck.config.js`
 
 ```json
 {
-  "customFilteredPackages": ["react", "react-dom", "public"],
+  "excludes": ["react", "react-dom", "public"],
   "srcPaths": ["src", "client"]
 }
 ```
 
-- customFilteredPackages: A list of packages to exclude from the scan.
+- excludes: A list of packages to exclude from the scan.
 - srcPaths: An array of directories to search for import and require statements.
 
 ## Notes:
 The checker automatically excludes alias paths defined in tsconfig.json,
-so you don't need to add those to customFilteredPackages.
+so you don't need to add those to excludes.

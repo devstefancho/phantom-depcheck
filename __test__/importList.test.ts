@@ -7,7 +7,7 @@ jest.mock("../lib/config", () => {
   return {
     loadConfig: jest.fn(() => {
       return {
-        customFilteredPackages: ["react", "public"],
+        excludes: ["react", "public"],
         srcPath: "src",
       };
     }),
