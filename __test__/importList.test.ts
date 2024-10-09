@@ -7,7 +7,7 @@ jest.mock("../lib/config", () => {
   return {
     loadConfig: jest.fn(() => {
       return {
-        excludes: ["react", "public"],
+        excludes: ["react", "public", "mocks"],
         srcPath: "src",
       };
     }),
@@ -16,7 +16,13 @@ jest.mock("../lib/config", () => {
 
 test("filtered import list", () => {
   const result = packageFilters(importsSet);
-  expect(result).toEqual(["react-dom", "react-dom/client", "redux"]);
+  expect(result).toEqual([
+    "react-dom",
+    "react-dom",
+    "redux",
+    "@types/react",
+    "swiper",
+  ]);
 });
 
 test("phantom package list", () => {
@@ -26,5 +32,5 @@ test("phantom package list", () => {
     packageJsonModuleList,
   );
   const result = Array.from(phantomPackages);
-  expect(result).toEqual(["redux"]);
+  expect(result).toEqual(["redux", "@types/react", "swiper"]);
 });
