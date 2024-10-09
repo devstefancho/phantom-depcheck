@@ -22,7 +22,7 @@ npx phantom-depcheck init 명령어를 실행하면 다음과 같은 구조의 p
 
 ```json
 {
-  "excludes": ["react", "react-dom", "public"],
+  "excludes": ["react", "react-dom"],
   "srcPaths": ["src", "client"]
 }
 ```

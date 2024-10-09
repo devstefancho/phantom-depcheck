@@ -21,7 +21,7 @@ Running `npx phantom-depcheck init` will generate a `phantom-depcheck.config.js`
 
 ```json
 {
-  "excludes": ["react", "react-dom", "public"],
+  "excludes": ["react", "react-dom"],
   "srcPaths": ["src", "client"]
 }
 ```
