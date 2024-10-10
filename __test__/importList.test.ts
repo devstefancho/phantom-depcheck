@@ -1,7 +1,10 @@
 import mock from "mock-fs";
 import { test } from "@jest/globals";
 import importsSet from "./importList";
-import { getPhantomDepsInOneFile, packageFilters } from "../lib/packageFilter";
+import {
+  filterValidPackages,
+  findPhantomDepsInFile,
+} from "../lib/filterValidPackages";
 import packageJsonModuleList from "./packageJsonList";
 
 jest.mock("../lib/config", () => {
@@ -28,7 +31,7 @@ describe("find phantom dependencies", () => {
   });
 
   test("filtered import list", () => {
-    const result = packageFilters(importsSet);
+    const result = filterValidPackages(importsSet);
     expect(result).toEqual([
       "react-dom",
       "react-dom",
@@ -39,8 +42,8 @@ describe("find phantom dependencies", () => {
   });
 
   test("phantom package list", () => {
-    const filteredPackages = packageFilters(importsSet);
-    const phantomPackages = getPhantomDepsInOneFile(
+    const filteredPackages = filterValidPackages(importsSet);
+    const phantomPackages = findPhantomDepsInFile(
       filteredPackages,
       packageJsonModuleList,
     );
@@ -49,8 +52,8 @@ describe("find phantom dependencies", () => {
   });
 
   test("phantom package list with mock fs", () => {
-    const filteredPackages = packageFilters(importsSet);
-    const phantomPackages = getPhantomDepsInOneFile(
+    const filteredPackages = filterValidPackages(importsSet);
+    const phantomPackages = findPhantomDepsInFile(
       filteredPackages,
       packageJsonModuleList,
     );
