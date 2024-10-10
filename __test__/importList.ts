@@ -15,4 +15,6 @@ importsSet.add("@types/react"); // import scoped package
 importsSet.add("mocks/MockComponent"); // import from absolute path
 importsSet.add("swiper/scss/pagination"); // import internal source
 
+importsSet.add("@types/swiper");
+
 export default importsSet;
