@@ -4,7 +4,6 @@ Phantom Dependency Checker helps identify phantom dependencies — packages used
 ## Features
 - Detects missing dependencies in `package.json` based on actual usage in the source code.
 - Uses AST (Abstract Syntax Tree) parsing to accurately find `import` and `require` statements.
-- By default, scans the `src`, `pages` directories, but you can specify other directories.
 - Outputs results to the console and logs them to a file.
 ## Installation
 ```bash
@@ -22,12 +21,15 @@ Running `npx phantom-depcheck init` will generate a `phantom-depcheck.config.js`
 ```json
 {
   "excludes": ["react", "react-dom"],
-  "srcPaths": ["src", "client"]
+  "includePaths": ["src", "client"],
+  "excludePaths": []
 }
 ```
 
 - excludes: A list of packages to exclude from the scan.
-- srcPaths: An array of directories to search for import and require statements.
+- includePaths: An array of directories to search for import and require statements.
+- excludePaths: An array of directories not to search, `.git` and `node_modules` are excluded by default, Nested paths such as 'src/pages' are not supported, only top-level paths like 'src' are allowed.
+
 
 ## Notes:
 The checker automatically excludes alias paths defined in tsconfig.json,

@@ -12,7 +12,8 @@ jest.mock("../lib/config", () => {
     loadConfig: jest.fn(() => {
       return {
         excludes: ["react", "@types/swiper"],
-        srcPath: "src",
+        includePaths: [],
+        excludePaths: [],
       };
     }),
   };
